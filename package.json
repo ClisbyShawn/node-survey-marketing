@@ -1,0 +1,18 @@
+{
+  "name": "marketing",
+  "version": "1.0.0",
+  "description": "Survey and marketing material genreator",
+  "main": "app.js",
+  "engines": {
+    "node": "12.16.3",
+    "npm": "6.14.8"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Shawn Clisby",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
