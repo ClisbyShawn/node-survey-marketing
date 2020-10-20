@@ -14,6 +14,7 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       let user = await User.findOne({ googleId: profile.id });
+      console.log("Is there a User", user);
       if (!user) use = await new User({ googleId: profile.id }).save();
       done(null, user);
     }
@@ -21,9 +22,11 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
+  console.log("serializeUser");
   done(null, user._id);
 });
 
 passport.deserializeUser((id, done) => {
+  console.log("deserializeUser");
   User.findById(id).then((user) => done(null, user));
 });
